@@ -1,0 +1,24 @@
+{
+    "manifestVersion": "3.0",
+    "id": "template-plugin",
+    "name": "QQNTim 模板插件",
+    "description": "快速开始开发你自己的插件。",
+    "version": "1.0.0",
+    "author": "Flysoft",
+    "injections": [
+        {
+            "type": "main",
+            "script": "main.js"
+        },
+        {
+            "type": "renderer",
+            "stylesheet": "style.css",
+            "script": "renderer.js"
+        },
+        {
+            "type": "renderer",
+            "page": ["settings"],
+            "script": "settings.js"
+        }
+    ]
+}
