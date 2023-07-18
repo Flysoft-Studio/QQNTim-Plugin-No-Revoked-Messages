@@ -1,4 +1,4 @@
-export const id = "my-template-plugin" as const;
+export const id = "no-revoked-message" as const;
 
 export const defaults: PluginConfig = {
     switchConfigItem: false,

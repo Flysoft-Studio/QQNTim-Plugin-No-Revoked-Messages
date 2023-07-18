@@ -1,7 +1,7 @@
 {
-    "name": "qqntim-plugin-template",
+    "name": "qqntim-plugin-no-revoked-messages",
     "private": true,
-    "version": "2.0.0",
+    "version": "1.0.0",
     "packageManager": "yarn@3.6.1",
     "license": "MIT",
     "scripts": {

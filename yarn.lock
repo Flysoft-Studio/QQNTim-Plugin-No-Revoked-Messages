@@ -1277,9 +1277,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qqntim-plugin-template@workspace:.":
+"qqntim-plugin-no-revoked-messages@workspace:.":
   version: 0.0.0-use.local
-  resolution: "qqntim-plugin-template@workspace:."
+  resolution: "qqntim-plugin-no-revoked-messages@workspace:."
   dependencies:
     "@flysoftbeta/qqntim-typings": ^3.0.0
     "@types/node": ^20.4.2
