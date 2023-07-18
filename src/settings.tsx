@@ -8,41 +8,60 @@ import { getPluginConfig } from "./config";
 export default class Entry implements QQNTim.Entry.Renderer {
     constructor() {
         // 如果不需要设置界面，将下一行注释掉即可；如果需要在设置项目旁边加一个小图标，请将 `undefined` 改为一段 HTML 代码（可以是 `<svg>`, `<img>` 等等）。
-        defineSettingsPanels(["模板插件设置", SettingsPanel, undefined]);
+        defineSettingsPanels(["防撤回插件", SettingsPanel, undefined]);
     }
 }
 
 function SettingsPanel({ config: _config, setConfig: _setConfig }: QQNTim.Settings.PanelProps) {
     const [pluginConfig, setPluginConfig] = usePluginConfig(_config, _setConfig);
-    const currentPluginConfigString = useMemo(() => JSON.stringify(getPluginConfig(env.config.plugins.config)), []);
 
     return (
         <>
             <SettingsSection title="插件设置">
                 <SettingsBox>
-                    <SettingsBoxItem title="当前生效的插件配置：" description={[currentPluginConfigString]} />
-                    <SettingsBoxItem title="开关" description={["这是一个开关。", `当前状态为：${pluginConfig.switchConfigItem ? "开" : "关"}`]}>
-                        <Switch checked={pluginConfig.switchConfigItem} onToggle={(state) => setPluginConfig("switchConfigItem", state)} />
-                    </SettingsBoxItem>
-                    {pluginConfig.switchConfigItem && (
-                        <SettingsBoxItem title="另一个开关" description={["这是另一个开关。", `当前状态为：${pluginConfig.anotherSwitchConfigItem ? "开" : "关"}`]}>
-                            <Switch checked={pluginConfig.anotherSwitchConfigItem} onToggle={(state) => setPluginConfig("anotherSwitchConfigItem", state)} />
-                        </SettingsBoxItem>
-                    )}
-                    <SettingsBoxItem title="下拉菜单" description={["这是一个下拉菜单。", `当前状态为：${pluginConfig.dropdownConfigItem}`]}>
+                    <SettingsBoxItem title="暂存的最大消息数量" description={["指定允许暂存的最大消息数量。当数量到达设定值时，将会清除最早的消息。防撤回对已经被清除的消息无效。"]}>
                         <Dropdown
                             items={[
-                                ["A" as const, "我是 A 选项"],
-                                ["B" as const, "我是 B 选项"],
-                                ["C" as const, "我是 C 选项"],
+                                [100 as const, "100 条"],
+                                [1000 as const, "1000 条"],
+                                [5000 as const, "5000 条"],
+                                [10000 as const, "10000 条"],
+                                [20000 as const, "20000 条"],
+                                [50000 as const, "50000 条"],
+                                [100000 as const, "100000 条"],
                             ]}
-                            selected={pluginConfig.dropdownConfigItem}
-                            onChange={(state) => setPluginConfig("dropdownConfigItem", state)}
-                            width="150px"
+                            selected={pluginConfig.maxMessagesCount}
+                            onChange={(state) => setPluginConfig("maxMessagesCount", state)}
+                            width="200px"
                         />
                     </SettingsBoxItem>
-                    <SettingsBoxItem title="输入框" description={["这是一个输入框。", `当前状态为：${pluginConfig.inputConfigItem}`]} isLast={true}>
-                        <Input value={pluginConfig.inputConfigItem} onChange={(state) => setPluginConfig("inputConfigItem", state)} />
+                    <SettingsBoxItem title="允许的最大被撤回消息数量" description={["指定允许存储的最大被撤回消息数量。当数量到达设定值时，将会清除最早的消息。"]}>
+                        <Dropdown
+                            items={[
+                                [100 as const, "100 条"],
+                                [1000 as const, "1000 条"],
+                                [5000 as const, "5000 条"],
+                                [10000 as const, "10000 条"],
+                                [20000 as const, "20000 条"],
+                                [50000 as const, "50000 条"],
+                                [100000 as const, "100000 条"],
+                            ]}
+                            selected={pluginConfig.maxRevokedMessagesCount}
+                            onChange={(state) => setPluginConfig("maxRevokedMessagesCount", state)}
+                            width="200px"
+                        />
+                    </SettingsBoxItem>
+                    <SettingsBoxItem title="自动保存时间间隔" description={["指定自动保存已撤回消息的时间间隔。"]}>
+                        <Dropdown
+                            items={[
+                                [60 as const, "1 分钟"],
+                                [120 as const, "2 分钟"],
+                                [300 as const, "5 分钟"],
+                            ]}
+                            selected={pluginConfig.autoSaveDuration}
+                            onChange={(state) => setPluginConfig("autoSaveDuration", state)}
+                            width="200px"
+                        />
                     </SettingsBoxItem>
                 </SettingsBox>
             </SettingsSection>
