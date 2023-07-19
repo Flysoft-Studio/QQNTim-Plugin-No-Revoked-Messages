@@ -177,16 +177,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@flysoftbeta/qqntim-typings@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@flysoftbeta/qqntim-typings@npm:3.0.0"
+"@flysoftbeta/qqntim-typings@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "@flysoftbeta/qqntim-typings@npm:3.1.2"
   dependencies:
     "@types/fs-extra": ^11.0.1
     "@types/node": ^20.4.2
     "@types/react": ^18.2.15
     "@types/react-dom": ^18.2.7
     typed-emitter: ^2.1.0
-  checksum: 06f039da3d99c913de4b705177a19a01bdca11d0afa0cf4967fcaaa5e379b809c27f1216c86e9dbe09b21b28244db1ed25ed7517c580c0c59113817da4e8d6cf
+  checksum: b46a9bd9fd1371ce45fb61082e26361bcdfbeddb60a2ec06f17042b897f69edff001aef16d0c6bdde0a02269e3fda8f00a8ee3d888e9c7ec5d493045f5e52aa6
   languageName: node
   linkType: hard
 
@@ -1281,7 +1281,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "qqntim-plugin-no-revoked-messages@workspace:."
   dependencies:
-    "@flysoftbeta/qqntim-typings": ^3.0.0
+    "@flysoftbeta/qqntim-typings": ^3.1.2
     "@types/node": ^20.4.2
     "@types/react": ^18.2.15
     "@types/react-dom": ^18.2.7
