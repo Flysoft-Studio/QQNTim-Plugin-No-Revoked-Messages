@@ -51,7 +51,7 @@ function SettingsPanel({ config: _config, setConfig: _setConfig }: QQNTim.Settin
                             width="200px"
                         />
                     </SettingsBoxItem>
-                    <SettingsBoxItem title="自动保存时间间隔" description={["指定自动保存已撤回消息的时间间隔。"]}>
+                    <SettingsBoxItem title="自动保存时间间隔" description={["指定自动保存已撤回消息的时间间隔。"]} isLast={true}>
                         <Dropdown
                             items={[
                                 [60 as const, "1 分钟"],
