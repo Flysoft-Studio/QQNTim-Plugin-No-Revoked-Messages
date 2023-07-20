@@ -1,5 +1,15 @@
 # QQNTim 防撤回插件
 
+## 简介
+
+本插件使 QQNT 中被撤回的消息仍能正常显示且持久保存。需要安装 [QQNTim 3.0 及以上版本](https://github.com/Flysoft-Studio/QQNTim) 才能使用。
+
+效果图：
+
+![截图](.github/screenshot.png)
+
+注意：本插件对自己撤回的消息无效。
+
 ## 开发
 
 ### 配置环境
