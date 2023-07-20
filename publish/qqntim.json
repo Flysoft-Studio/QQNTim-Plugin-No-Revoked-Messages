@@ -3,7 +3,7 @@
     "id": "no-revoked-messages",
     "name": "防撤回",
     "description": "显示被撤回的消息。",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Flysoft",
     "injections": [
         {
