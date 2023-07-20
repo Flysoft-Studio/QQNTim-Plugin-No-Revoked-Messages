@@ -1,8 +1,8 @@
-import { env, interrupt } from "qqntim/main";
 import { getPluginConfig } from "./config";
+import { s } from "./utils/sep";
 import { randomUUID } from "crypto";
 import { app } from "electron";
-import { s } from "./utils/sep";
+import { env, interrupt } from "qqntim/main";
 import { modules } from "qqntim/main";
 const { fs } = modules;
 
